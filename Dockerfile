@@ -1,6 +1,5 @@
 FROM intelligentpathways/java8
 
-COPY . /usr/app
+COPY build/libs/*.jar /usr/app/
 WORKDIR /usr/app
-RUN ./gradlew build -x test -x integrationTest
-CMD ./gradlew bootRun
+CMD java -jar *.jar
